@@ -111,7 +111,7 @@ export default function Projects() {
     return (
         <div className="pt-16 pb-16">
             <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-4xl font-bold mb-8 animate-fade-in">Projects I've Worked On</h1>
+                <h1 className="text-4xl font-bold mb-8 animate-fade-in">Projects I&apos;ve Worked On</h1>
                 <div className="space-y-12">
                     {projects.map((project, index) => (
                         <div 
