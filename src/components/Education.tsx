@@ -134,9 +134,11 @@ export default function Education() {
                 >
                     <div className="flex items-center justify-center mb-6">
                         <Image 
-                            src="https://iigvietnam.com/wp-content/uploads/2021/08/banner-iig-scaled.jpg" 
+                            src="/iig.jpg" 
                             alt="IIG Vietnam Logo"
                             className="h-20 w-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                            width={80}
+                            height={80}
                         />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 tracking-wider">TOEIC Certificate</h3>

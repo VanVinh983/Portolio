@@ -35,18 +35,18 @@ const Skill = () => {
             <div className="flex justify-center mt-8">
                 <div className="grid grid-cols-5 gap-4">
                     {[
-                        { src: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", alt: "React Native", label: "React Native" },
-                        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYYAfz-KmOiY-JQEDNDF2brVLmDSxJG5To-A&s", alt: "Flutter", label: "Flutter" },
-                        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgbwlSWNP4jJAvm6loMFDq6PmGvzfvqrlLg&s", alt: "Dart", label: "Dart" },
-                        { src: "https://cdn-icons-png.flaticon.com/512/732/732212.png", alt: "HTML", label: "HTML" },
-                        { src: "https://cdn-icons-png.flaticon.com/512/732/732190.png", alt: "CSS", label: "CSS" },
-                        { src: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", alt: "JavaScript", label: "JavaScript" },
-                        { src: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", alt: "React", label: "React" },
-                        { src: "https://cdn-icons-png.flaticon.com/512/6132/6132222.png", alt: "C#", label: "C#" },
-                        { src: "https://w7.pngwing.com/pngs/854/971/png-transparent-blazor-hd-logo.png", alt: "Blazor", label: "Blazor" },
-                        { src: "https://avatars.githubusercontent.com/u/33895495?s=200&v=4", alt: "UmiJS", label: "UmiJS" },
-                        { src: "https://cdn.creazilla.com/icons/3219990/nextjs-icon-md.png", alt: "Next.js", label: "Next.js" },
-                        { src: "https://e7.pngegg.com/pngimages/713/558/png-clipart-computer-icons-pro-git-github-logo-text-logo-thumbnail.png", alt: "Git", label: "Git" }
+                        { src: "/react.png", alt: "React Native", label: "React Native" },
+                        { src: "/flutter.png", alt: "Flutter", label: "Flutter" },
+                        { src: "/dart.png", alt: "Dart", label: "Dart" },
+                        { src: "/html.png", alt: "HTML", label: "HTML" },
+                        { src: "/css.png", alt: "CSS", label: "CSS" },
+                        { src: "/js.png", alt: "JavaScript", label: "JavaScript" },
+                        { src: "/react.png", alt: "React", label: "React" },
+                        { src: "/csharp.png", alt: "C#", label: "C#" },
+                        { src: "/blazor.png", alt: "Blazor", label: "Blazor" },
+                        { src: "/umijs.png", alt: "UmiJS", label: "UmiJS" },
+                        { src: "/nextjs.png", alt: "Next.js", label: "Next.js" },
+                        { src: "/git.png", alt: "Git", label: "Git" }
                     ].map((item, index) => (
                         <motion.div 
                             key={index}
@@ -59,7 +59,14 @@ const Skill = () => {
                                 visible: { opacity: 1, y: 0 }
                             }}
                         >
-                            <Image src={item.src} alt={item.alt} className="w-12 h-12 rounded-full object-cover object-center bg-white" />
+                            <Image 
+                                src={item.src} 
+                                alt={item.alt} 
+                                width={48}
+                                height={48}
+                                objectFit="fit"
+                                className="rounded-full object-cover object-center bg-white" 
+                            />
                             <span>{item.label}</span>
                         </motion.div>
                     ))}

@@ -19,7 +19,7 @@ const Hero = () => {
             },
           }}
         >
-          {"Hi, I&apos;m ".split("").map((char, index) => (
+          {"Hi, I'm ".split("").map((char, index) => (
             <motion.span
               key={`intro-${index}`}
               variants={{
