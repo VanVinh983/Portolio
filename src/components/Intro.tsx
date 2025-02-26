@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -59,7 +59,7 @@ const Intro = () => {
                 visible: { opacity: 1 }
               }}
             >
-              I am a Mobile Developer with over 3 years of experience. I am proficient in Flutter, React Native, Android native (Java), and applying AI in computer vision, and I also have experience with web frameworks such as Blazor, Next.js, React.js, and UmiJS. I am seeking a dynamic and professional work environment to further develop my skills and contribute to the company's success. 
+              I am a Mobile Developer with over 3 years of experience. I am proficient in Flutter, React Native, Android native (Java), and applying AI in computer vision, and I also have experience with web frameworks such as Blazor, Next.js, React.js, and UmiJS. I am seeking a dynamic and professional work environment to further develop my skills and contribute to the company&apos;s success. 
             </motion.p>
         </div>
     </div>

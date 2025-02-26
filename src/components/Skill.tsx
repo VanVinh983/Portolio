@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "motion/react";
 import { useInView } from 'react-intersection-observer';
+import Image from "next/image";
 
 const Skill = () => {
     const controls = useAnimation();
@@ -58,7 +59,7 @@ const Skill = () => {
                                 visible: { opacity: 1, y: 0 }
                             }}
                         >
-                            <img src={item.src} alt={item.alt} className="w-12 h-12 rounded-full object-cover object-center bg-white" />
+                            <Image src={item.src} alt={item.alt} className="w-12 h-12 rounded-full object-cover object-center bg-white" />
                             <span>{item.label}</span>
                         </motion.div>
                     ))}

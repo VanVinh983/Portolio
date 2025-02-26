@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
@@ -20,7 +19,7 @@ const Hero = () => {
             },
           }}
         >
-          {"Hi, I'm ".split("").map((char, index) => (
+          {"Hi, I&apos;m ".split("").map((char, index) => (
             <motion.span
               key={`intro-${index}`}
               variants={{

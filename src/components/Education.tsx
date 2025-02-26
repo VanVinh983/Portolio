@@ -4,6 +4,7 @@ import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import Image from "next/image";
 
 export default function Education() {
     const controls = useAnimation();
@@ -94,7 +95,7 @@ export default function Education() {
                         </button>
                         <TransformWrapper>
                             <TransformComponent>
-                                <img
+                                <Image
                                     src="https://tqa.iuh.edu.vn/wp-content/uploads/2022/12/H%C3%ACnh-1_Campus-IUH.png"
                                     alt="IUH Campus"
                                     className="w-full h-auto"
@@ -132,7 +133,7 @@ export default function Education() {
                     }}
                 >
                     <div className="flex items-center justify-center mb-6">
-                        <img 
+                        <Image 
                             src="https://iigvietnam.com/wp-content/uploads/2021/08/banner-iig-scaled.jpg" 
                             alt="IIG Vietnam Logo"
                             className="h-20 w-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
