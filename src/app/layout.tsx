@@ -8,8 +8,7 @@ import MouseFollowLayout from "@/components/MouseFollowLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Your Name - Portfolio",
-  description: "Personal portfolio website built with Next.js",
+  title: "Van Vinh - Portfolio",
 };
 
 export default function RootLayout({
