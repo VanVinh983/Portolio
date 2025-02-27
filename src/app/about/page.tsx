@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 
 export default function About () {
     return (
-        <div className="pt-24 pb-16">
+        <div className="pt-12 sm:pt-24 pb-8 sm:pb-16">
             <motion.div 
-                className="text-white p-8 bg-gray-800 rounded-lg mx-16 relative"
+                className="text-white p-4 sm:p-8 bg-gray-800 rounded-lg mx-4 sm:mx-16 relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -20,22 +20,22 @@ export default function About () {
                 <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div>
                 
                 <motion.h2 
-                    className="text-2xl font-bold mb-4 relative z-10"
+                    className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 relative z-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     Personal Information
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 relative z-10">
                     <motion.div 
-                        className="space-y-3"
+                        className="space-y-2 sm:space-y-3"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Name:</span>
@@ -43,7 +43,7 @@ export default function About () {
                         </motion.div>
                         
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Date of Birth:</span>
@@ -51,7 +51,7 @@ export default function About () {
                         </motion.div>
 
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Place of Birth:</span>
@@ -59,7 +59,7 @@ export default function About () {
                         </motion.div>
 
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Phone:</span>
@@ -67,7 +67,7 @@ export default function About () {
                         </motion.div>
 
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Email:</span>
@@ -75,7 +75,7 @@ export default function About () {
                         </motion.div>
 
                         <motion.div 
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-1 sm:space-x-2"
                             whileHover={{ scale: 1.02 }}
                         >
                             <span className="font-semibold">Address:</span>
@@ -87,7 +87,7 @@ export default function About () {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
-                        className="w-full h-64 rounded-lg overflow-hidden"
+                        className="w-full h-48 sm:h-64 rounded-lg overflow-hidden"
                     >
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0695116171706!2d106.63827597480567!3d10.806631089344377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be8f7a77b3f%3A0x9e1d75799ce13d6d!2zOTU4LzMgw4J1IEPGoSwgUGjGsOG7nW5nIDE0LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1702828546089!5m2!1svi!2s"

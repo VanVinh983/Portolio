@@ -5,10 +5,10 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen px-4">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen">
       <div className="w-full text-center md:text-left">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
           initial="hidden"
           animate="visible"
           variants={{
@@ -44,7 +44,7 @@ const Hero = () => {
           ))}
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl text-gray-600 mb-8"
+          className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-600 mb-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
@@ -65,12 +65,12 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-      <div className='w-full flex justify-center mt-8 md:mt-0 h-[60vh] relative' style={{marginRight: '-200px',}}>
+      <div className={`w-full flex justify-center mt-8 md:mt-0 h-[60vh] relative ${window.innerWidth < 768 ? 'overflow-hidden' : ''}`}>
         <motion.div 
           initial={{ x: "100vw" }}
           animate={{ x: 0, transform: "skewX(-20deg)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full flex justify-center mt-8 md:mt-0 h-full bg-white bg-opacity-10 rounded-xl border-2 border-gray-300 relative"
+          className="w-full flex justify-center mt-8 md:mt-0 h-[50vh] bg-white bg-opacity-10 rounded-xl border-2 border-gray-300 relative"
         >
         </motion.div>
         <motion.img 
@@ -78,7 +78,7 @@ const Hero = () => {
           alt="Hero" 
           width={500} 
           className='absolute' 
-          style={{ height: '100%', objectFit: 'contain', filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.7))" }}
+          style={{ height: '90%', objectFit: 'contain', filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.7))" }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}

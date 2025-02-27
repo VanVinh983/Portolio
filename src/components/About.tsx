@@ -19,11 +19,11 @@ const About = ({ showtitle = true }: Props) => {
     }, [controls, inView]);
 
     return (
-        <div ref={ref} className="text-white p-16">
+        <div ref={ref} className="text-white p-4 sm:p-8 md:p-16">
             {
                 showtitle && (
                     <motion.h1
-                        className="text-2xl font-bold text-center border-4 border-white p-4 w-1/6 mx-auto"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-2/3 sm:w-1/3 md:w-1/6 mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={controls}
                         transition={{ duration: 0.5, delay: 0.5 }}
@@ -39,7 +39,7 @@ const About = ({ showtitle = true }: Props) => {
             <br/>
             <hr/>
             <motion.div 
-                className="px-36 py-8" 
+                className="px-4 sm:px-20 md:px-36 py-4 sm:py-6 md:py-8" 
                 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center'}}
                 initial={{ opacity: 0 }}
                 animate={controls}
@@ -48,13 +48,13 @@ const About = ({ showtitle = true }: Props) => {
                     visible: { opacity: 1 }
                 }}
             >
-                <h2 className="text-2xl font-bold">Mobile Developer</h2>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">Mobile Developer</h2>
                 <p className="text-center">
                     My extensive background in mobile application development includes proficiency with leading frameworks such as Flutter and React Native. This expertise has empowered me to construct robust, scalable applications that address a broad spectrum of user and business needs.
                 </p>
             </motion.div>
             <motion.div 
-                className="px-36 py-8" 
+                className="px-4 sm:px-20 md:px-36 py-4 sm:py-6 md:py-8" 
                 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center'}}
                 initial={{ opacity: 0 }}
                 animate={controls}
@@ -63,7 +63,7 @@ const About = ({ showtitle = true }: Props) => {
                     visible: { opacity: 1 }
                 }}
             >
-                <h2 className="text-2xl font-bold">Web Developer</h2>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">Web Developer</h2>
                 <p className="text-center">
                     Leveraging frameworks like ReactJS, UmiJS, Next.js, and Blazor, I have crafted web applications that are both scalable and user-friendly, fulfilling a variety of business objectives and user demands.
                 </p>

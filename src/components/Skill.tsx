@@ -19,9 +19,9 @@ const Skill = () => {
     }, [controls, inView]);
 
     return (
-        <div ref={ref} className="text-white p-16">
+        <div ref={ref} className="text-white p-4 sm:p-8 md:p-16">
             <motion.h1
-                className="text-2xl font-bold text-center border-4 border-white p-4 w-2/6 mx-auto"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-3/4 sm:w-1/2 md:w-2/6 mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -33,7 +33,7 @@ const Skill = () => {
                 <span>S K I L L S</span>
             </motion.h1>
             <div className="flex justify-center mt-8">
-                <div className="grid grid-cols-5 gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
                     {[
                         { src: "/react.png", alt: "React Native", label: "React Native" },
                         { src: "/flutter.png", alt: "Flutter", label: "Flutter" },
@@ -76,7 +76,7 @@ const Skill = () => {
             <br />
             <br />
             <motion.h1
-                className="text-2xl font-bold text-center border-4 border-white p-4 w-2/6 mx-auto"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-3/4 sm:w-1/2 md:w-2/6 mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -105,7 +105,7 @@ const Skill = () => {
                 ].map((skill, index) => (
                     <motion.div
                         key={index}
-                        className="bg-gray-800 p-6 rounded-lg shadow-lg w-64"
+                        className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg w-full sm:w-80 md:w-64"
                         initial={{ opacity: 0, y: 20 }}
                         animate={controls}
                         whileHover={{ scale: 1.1, transition: { type: "spring", stiffness: 300 } }}
@@ -114,7 +114,7 @@ const Skill = () => {
                             visible: { opacity: 1, y: 0 }
                         }}
                     >
-                        <h3 className="text-xl font-bold text-white text-center">{skill.title}</h3>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center">{skill.title}</h3>
                         <div className="flex justify-center my-2">
                             {!showDetail.includes(skill.title) ? (
                                 <motion.button
@@ -131,7 +131,7 @@ const Skill = () => {
                                 </motion.button>
                             ) : (
                                 <motion.p 
-                                    className="text-sm text-gray-300 text-center"
+                                    className="text-sm sm:text-base md:text-lg text-gray-300 text-center"
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.3 }}

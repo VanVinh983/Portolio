@@ -19,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} flex flex-col md:flex-row overflow-x-hidden`}>
         <MouseFollowLayout>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen flex-1 p-4 md:p-8">
+            {children}
+          </main>
           {/* <Footer /> */}
         </MouseFollowLayout>
       </body>

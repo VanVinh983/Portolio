@@ -19,9 +19,9 @@ const WorkExperience = () => {
     }, [controls, inView]);
 
     return (
-        <div ref={ref} className="text-white p-16">
+        <div ref={ref} className="text-white p-4 sm:p-8 md:p-16">
             <motion.h1
-                className="text-2xl font-bold text-center border-4 border-white p-4 w-2/6 mx-auto"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-3/4 sm:w-1/2 md:w-2/6 mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls}
                 transition={{ duration: 0.5, delay: 0.5 }}
