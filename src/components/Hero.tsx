@@ -4,6 +4,21 @@ import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Set initial state based on current window width
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section className="flex flex-col md:flex-row items-center justify-center min-h-screen">
       <div className="w-full text-center md:text-left">
@@ -65,7 +80,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-      <div className={`w-full flex justify-center mt-8 md:mt-0 h-[60vh] relative ${window.innerWidth < 768 ? 'overflow-hidden' : ''}`}>
+      <div className={`w-full flex justify-center mt-8 md:mt-0 h-[60vh] relative ${isMobile ? 'overflow-hidden' : ''}`}>
         <motion.div 
           initial={{ x: "100vw" }}
           animate={{ x: 0, transform: "skewX(-20deg)" }}
