@@ -64,7 +64,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          Web Developer | Mobile Developer
+          Fullstack Developer | Mobile Developer
         </motion.p>
         <motion.div
           initial={{ y: 20, opacity: 0 }}

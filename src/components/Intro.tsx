@@ -59,7 +59,7 @@ const Intro = () => {
                 visible: { opacity: 1 }
               }}
             >
-              I am a Mobile Developer with over 3 years of experience. I am proficient in Flutter, React Native, Android native (Java), and applying AI in computer vision, and I also have experience with web frameworks such as Blazor, Next.js, React.js, and UmiJS. I am seeking a dynamic and professional work environment to further develop my skills and contribute to the company&apos;s success. 
+              I am a product-minded Fullstack Developer with over 4 years of experience building high-performance Web and Mobile applications. I combine a sharp expertise in modern frontend development (Next.js, React.js, React Native, Flutter) with a solid foundation in backend architectures (NestJS, Java Spring Boot, Python Flask) and databases (PostgreSQL, MySQL). I am seeking a role where I can take end-to-end ownership of features&mdash;from responsive client interfaces to scalable APIs&mdash;to deliver robust, production-ready systems.
             </motion.p>
         </div>
     </div>

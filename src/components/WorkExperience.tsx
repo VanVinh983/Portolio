@@ -36,31 +36,46 @@ const WorkExperience = () => {
             <VerticalTimeline>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work hover:scale-105 transition-transform duration-400"
-                    date="March 2022 - Now"
+                    date="May 2025 - Now"
                     contentArrowStyle={{ borderRight: '7px solid  rgba(255,255,255,0.1)' }}
                     contentStyle={{ background: 'rgba(255,255,255,0.1)', color: '#fff' }}
                     iconStyle={{ background: 'rgba(255,255,255)', color: 'black' }}
                     icon={<FaBriefcase />}
                     onTimelineElementClick={() => router.push('/projects')}
                 >
-                    <h3 className="vertical-timeline-element-title" style={{color: 'white'}}>MOBILE DEVELOPER</h3>
+                    <h3 className="vertical-timeline-element-title" style={{color: 'white'}}>FULLSTACK / MOBILE DEVELOPER</h3>
+                    <h4 className="vertical-timeline-element-subtitle" style={{color: 'white'}}>LIA Beauty JSC, HCM</h4>
+                    <p>
+                        I build admin web settings and data configurations for mobile apps and landing pages, and implement core backend CRUD APIs with NestJS over PostgreSQL. I integrate RESTful APIs, Firebase, payment gateways, and third-party call services, collaborate across teams, and run code reviews&mdash;leveraging AI tools (Cursor, Figma MCP) to accelerate delivery. <span className="text-blue-500">Read More</span>
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work hover:scale-105 transition-transform duration-400"
+                    contentStyle={{ background: 'rgba(255,255,255,0.1)', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(255,255,255,0.1)' }}
+                    date="March 2022 - May 2025"
+                    iconStyle={{ background: 'rgba(255,255,255)', color: 'black' }}
+                    icon={<FaBriefcase />}
+                    onTimelineElementClick={() => router.push('/projects')}
+                >
+                    <h3 className="vertical-timeline-element-title" style={{color: 'white'}}>FULLSTACK / MOBILE DEVELOPER</h3>
                     <h4 className="vertical-timeline-element-subtitle" style={{color: 'white'}}>Digitech Solutions, HCM</h4>
                     <p>
-                        As a mobile developer, ... <span className="text-blue-500">Read More</span>
+                        I developed high-performance mobile apps with Flutter, React Native, and Android Native, and web interfaces with UmiJS, React.js, Next.js, and .NET Blazor. I built backend services and CRUD APIs using NestJS and .NET, created Python Flask chatbot microservices, applied Clean Architecture and MVVM, and acted as a Data Analyst to prepare datasets for AI model training while mentoring new team members. <span className="text-blue-500">Read More</span>
                     </p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgba(255,255,255,0.1)', color: '#fff' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgba(255,255,255,0.1)' }}
-                    date="2011 - present"
+                    date="Dec 2021 - March 2022"
                     iconStyle={{ background: 'rgba(255,255,255)', color: 'black' }}
                     icon={<FaBriefcase />}
                 >
-                    <h3 className="vertical-timeline-element-title" style={{color: 'white'}}>INTERN MOBILE</h3>
+                    <h3 className="vertical-timeline-element-title" style={{color: 'white'}}>MOBILE INTERN</h3>
                     <h4 className="vertical-timeline-element-subtitle" style={{color: 'white'}}>Digitech Solutions, HCM</h4>
                     <p>
-                        As an intern, I focus on developing eCommerce mobile apps using Flutter, enhancing UI components, and API integration. I work alongside senior developers to refine app performance and resolve technical issues, while continually advancing my Flutter expertise and keeping abreast of new technologies.
+                        I developed an eCommerce mobile application using Flutter, and collaborated with senior developers to optimize performance and resolve technical issues while advancing my mobile development expertise.
                     </p>
                 </VerticalTimelineElement>
             </VerticalTimeline>
