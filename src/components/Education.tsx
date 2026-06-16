@@ -19,17 +19,20 @@ export default function Education() {
 
     return (
         <div ref={ref} className="text-white p-4 sm:p-8 md:p-16">
-            <motion.h1
-                className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-3/4 sm:w-1/2 md:w-1/3 mx-auto"
+            <motion.div
+                className="text-center mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 variants={{
                     visible: { opacity: 1, y: 0 }
                 }}
             >
-                <span className="mr-4">E D U C A T I O N</span>
-            </motion.h1>
+                <p className="cosmic-label mb-3">06 — origin</p>
+                <h2 className="cosmic-heading text-3xl md:text-4xl">
+                    Home <span className="text-gradient">planet</span>
+                </h2>
+            </motion.div>
             <div className="flex justify-center mt-8">
                 <motion.div 
                     className="bg-gray-800 rounded-lg p-4 sm:p-6 md:p-8 max-w-4xl w-full"
@@ -75,9 +78,8 @@ export default function Education() {
                                     visible: { opacity: 1 }
                                 }}
                             >
-                                <p className="text-gray-300">Bachelor of Information Technology</p>
-                                <p className="text-gray-300">Graduation: Good Standing</p>
-                                <p className="text-gray-300">GPA: 2.9/4.0</p>
+                                <p className="text-gray-300">Bachelor of Software Engineering</p>
+                                <p className="text-gray-300">2018 — 2023 · Ho Chi Minh City</p>
                             </motion.div>
                         </div>
                     </div>
@@ -95,7 +97,8 @@ export default function Education() {
                         </button>
                         <TransformWrapper>
                             <TransformComponent>
-                                <Image
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
                                     src="https://tqa.iuh.edu.vn/wp-content/uploads/2022/12/H%C3%ACnh-1_Campus-IUH.png"
                                     alt="IUH Campus"
                                     className="w-full h-auto"
@@ -108,17 +111,20 @@ export default function Education() {
             <br/>
             <hr/>
             <br/>
-            <motion.h1
-                className="text-xl sm:text-2xl md:text-3xl font-bold text-center border-4 border-white p-4 w-3/4 sm:w-1/2 md:w-1/3 mx-auto"
+            <motion.div
+                className="text-center mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 variants={{
                     visible: { opacity: 1, y: 0 }
                 }}
             >
-                <span className="mr-4">C E R T I F I C A T I O N S</span>
-            </motion.h1>
+                <p className="cosmic-label mb-3">07 — credentials</p>
+                <h2 className="cosmic-heading text-3xl md:text-4xl">
+                    Star <span className="text-gradient">charts</span>
+                </h2>
+            </motion.div>
             <div className="flex justify-center mt-8">
                 <motion.div
                     className="text-center relative cursor-pointer bg-white/5 rounded-xl p-4 sm:p-6 md:p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
@@ -151,9 +157,8 @@ export default function Education() {
                         />
                     </div>
                     <div className="space-y-2">
-                        <p className="text-lg sm:text-xl md:text-2xl text-blue-400 font-semibold">Score: 475</p>
-                        <p className="text-gray-300 text-sm sm:text-md md:text-lg">Achieved: December 2022</p>
-                        <p className="text-gray-300 text-sm sm:text-md md:text-lg">Expired: December 2024</p>
+                        <p className="text-gray-300 text-sm sm:text-md md:text-lg">TOEIC · IIG Vietnam</p>
+                        <p className="text-gray-300 text-sm sm:text-md md:text-lg">Issued: December 2022</p>
                     </div>
                 </motion.div>
             </div>

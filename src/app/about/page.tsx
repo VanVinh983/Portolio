@@ -5,27 +5,22 @@ import { motion } from "motion/react";
 export default function About () {
     return (
         <div className="pt-12 sm:pt-24 pb-8 sm:pb-16">
-            <motion.div 
-                className="text-white p-4 sm:p-8 bg-gray-800 rounded-lg mx-4 sm:mx-16 relative"
+            <motion.div
+                className="cosmic-panel text-white p-4 sm:p-8 mx-4 sm:mx-16 relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{
-                    backgroundImage: "url('https://ik.imagekit.io/tvlk/blog/2023/04/go-and-share-kinh-nghiem-du-lich-an-giang-13.jpg')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
             >
-                {/* Add an overlay to improve text readability */}
-                <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div>
-                
-                <motion.h2 
-                    className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 relative z-10"
+                <div className="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-gradient-to-br from-cyan-500/10 to-violet-500/10 blur-3xl pointer-events-none" />
+
+                <p className="cosmic-label mb-2 relative z-10">✦ navigator profile</p>
+                <motion.h2
+                    className="cosmic-heading text-2xl sm:text-3xl mb-4 relative z-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    Personal Information
+                    Personal <span className="text-gradient">data</span>
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 relative z-10">
                     <motion.div 

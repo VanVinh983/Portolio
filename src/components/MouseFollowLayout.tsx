@@ -1,65 +1,49 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function MouseFollowLayout({ children }: { children: React.ReactNode }) {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Skip the cursor spotlight on touch devices.
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    const target = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const current = { ...target };
+    let frameId: number;
+
     const handleMouseMove = (event: MouseEvent) => {
-      // Use pageX/pageY instead of clientX/clientY so that the position
-      // reflects the cursor's location within the entire document.
-      setCursorPosition({
-        x: event.pageX,
-        y: event.pageY,
-      });
+      target.x = event.clientX;
+      target.y = event.clientY;
+    };
+
+    const tick = () => {
+      // Ease toward the cursor and write to a CSS variable — no React re-render.
+      current.x += (target.x - current.x) * 0.08;
+      current.y += (target.y - current.y) * 0.08;
+      if (spotlightRef.current) {
+        spotlightRef.current.style.background = `radial-gradient(circle at ${current.x}px ${current.y}px, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0) 45vh)`;
+      }
+      frameId = requestAnimationFrame(tick);
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    frameId = requestAnimationFrame(tick);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(frameId);
+    };
   }, []);
 
-  useEffect(() => {
-    let animationFrameId: number;
-
-    const updateSmoothPosition = () => {
-      setSmoothPosition((prev) => {
-        const dx = cursorPosition.x - prev.x;
-        const dy = cursorPosition.y - prev.y;
-        const easingFactor = 0.05;
-
-        return {
-          x: Math.round(prev.x + dx * easingFactor),
-          y: Math.round(prev.y + dy * easingFactor),
-        };
-      });
-      animationFrameId = requestAnimationFrame(updateSmoothPosition);
-    };
-
-    animationFrameId = requestAnimationFrame(updateSmoothPosition);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [cursorPosition]);
-
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative w-full">
       <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: `radial-gradient(
-            circle at ${smoothPosition.x}px ${smoothPosition.y}px,
-            rgba(59, 130, 246, 0.3) 0%,
-            rgba(59, 130, 246, 0) 50vh
-          )`,
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
+        ref={spotlightRef}
+        className="pointer-events-none fixed inset-0 z-[1]"
+        aria-hidden
       />
-      <div style={{ position: "relative", zIndex: 0 }}>{children}</div>
+      <div className="relative z-0 w-full">{children}</div>
     </div>
   );
 }

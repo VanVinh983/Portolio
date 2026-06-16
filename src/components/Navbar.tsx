@@ -20,7 +20,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/"
-              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/" ? "text-blue-400" : "text-white"} hover:text-blue-400`}
+              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/" ? "text-cyan-300" : "text-white"} hover:text-cyan-300`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -35,7 +35,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/about"
-              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/about" ? "text-blue-400" : "text-white"} hover:text-blue-400`}
+              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/about" ? "text-cyan-300" : "text-white"} hover:text-cyan-300`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
@@ -46,7 +46,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/contact"
-              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/contact" ? "text-blue-400" : "text-white"} hover:text-blue-400`}
+              className={`flex items-center transition transform duration-300 hover:scale-110 ${pathname === "/contact" ? "text-cyan-300" : "text-white"} hover:text-cyan-300`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.94 6.94A2 2 0 014.83 6h10.34a2 2 0 011.89 1.06l-7 4.67-7-4.67z" />

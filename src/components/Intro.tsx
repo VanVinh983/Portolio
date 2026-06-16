@@ -5,63 +5,40 @@ import { motion, useAnimation } from 'framer-motion';
 
 const Intro = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
+    if (inView) controls.start('visible');
   }, [controls, inView]);
 
   return (
-    <div ref={ref} className='text-justify text-white px-4 md:px-16 bg-gray-900 py-8 md:py-16 relative overflow-hidden'>
-        <motion.div 
-          className="absolute top-0 left-0 w-full h-full flex justify-end items-center"
-          initial={{ opacity: 0 }}
-          animate={controls}
-          transition={{ duration: 1 }}
-          variants={{
-            visible: { opacity: 1 }
-          }}
-        >
-            <div className='p-4 md:p-8 border-4 md:border-8 border-black rounded-xl transform rotate-45'>
-                <h1 style={{fontSize: '48px', fontWeight: 'bold', color: 'black'}}>VINH IT</h1>
-            </div>
-        </motion.div>
-        <div className="z-10 relative">
-            <motion.h1 
-              className='text-xl md:text-2xl font-bold'
-              initial={{ opacity: 0 }}
-              animate={controls}
-              transition={{ duration: 1, delay: 0.5 }}
-              variants={{
-                visible: { opacity: 1 }
-              }}
-            >
-              Introduction
-            </motion.h1>
-            <motion.hr 
-              className='border-gray-700'
-              initial={{ opacity: 0 }}
-              animate={controls}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              variants={{
-                visible: { opacity: 1 }
-              }}
-            />
-            <br/>
-            <motion.p 
-              className='text-justify text-white text-base md:text-xl w-full md:w-3/4'
-              initial={{ opacity: 0 }}
-              animate={controls}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              variants={{
-                visible: { opacity: 1 }
-              }}
-            >
-              I am a product-minded Fullstack Developer with over 4 years of experience building high-performance Web and Mobile applications. I combine a sharp expertise in modern frontend development (Next.js, React.js, React Native, Flutter) with a solid foundation in backend architectures (NestJS, Java Spring Boot, Python Flask) and databases (PostgreSQL, MySQL). I am seeking a role where I can take end-to-end ownership of features&mdash;from responsive client interfaces to scalable APIs&mdash;to deliver robust, production-ready systems.
-            </motion.p>
-        </div>
+    <div ref={ref} className="px-4 md:px-16 py-12 md:py-24 relative">
+      <motion.div
+        className="cosmic-panel max-w-4xl mx-auto p-6 md:p-10 overflow-hidden"
+        initial={{ opacity: 0, y: 40 }}
+        animate={controls}
+        transition={{ duration: 0.8 }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
+      >
+        {/* faint planet watermark */}
+        <div className="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-gradient-to-br from-cyan-500/10 to-violet-500/10 blur-2xl pointer-events-none" />
+
+        <p className="cosmic-label mb-3">01 — incoming transmission</p>
+        <h2 className="cosmic-heading text-2xl md:text-4xl text-white mb-4">
+          About the <span className="text-gradient">navigator</span>
+        </h2>
+        <div className="cosmic-divider w-24 mb-6" />
+        <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+          I am a product-minded{' '}
+          <span className="text-cyan-300 font-medium">Fullstack Developer</span> with
+          over 4 years charting high-performance Web &amp; Mobile systems. I pilot
+          modern frontend galaxies — Next.js, React.js, React Native, Flutter — with
+          a solid foundation in backend constellations (NestJS, Java Spring Boot,
+          Python Flask) and data stores (PostgreSQL, MySQL). My mission: take
+          end-to-end ownership of features, from responsive interfaces to scalable
+          APIs, and launch robust, production-ready worlds.
+        </p>
+      </motion.div>
     </div>
   );
 };

@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import MouseFollowLayout from "@/components/MouseFollowLayout";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import SpaceBackground from "@/components/SpaceBackground";
+import ScrollProgress from "@/components/ScrollProgress";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
-  title: "Van Vinh - Portfolio",
+  metadataBase: new URL("https://doanvanvinh.dev"),
+  title: "Doan Van Vinh — Fullstack & Mobile Developer",
+  description:
+    "Product-minded Fullstack Developer with 4+ years building high-performance Web and Mobile apps with Next.js, React Native, Flutter, NestJS and more.",
+  keywords: [
+    "Doan Van Vinh", "Fullstack Developer", "Mobile Developer", "React Native",
+    "Flutter", "Next.js", "NestJS", "Portfolio",
+  ],
+  authors: [{ name: "Doan Van Vinh" }],
+  openGraph: {
+    title: "Doan Van Vinh — Fullstack & Mobile Developer",
+    description:
+      "Product-minded Fullstack Developer with 4+ years building high-performance Web and Mobile apps.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -18,13 +36,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col md:flex-row overflow-x-hidden`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans overflow-x-hidden`}>
+        <SpaceBackground />
+        <ScrollProgress />
+        <CustomCursor />
         <MouseFollowLayout>
           <Navbar />
-          <main className="min-h-screen flex-1 p-4 md:p-8">
+          <main className="relative z-10 min-h-screen w-full p-4 md:p-8">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </MouseFollowLayout>
       </body>
     </html>

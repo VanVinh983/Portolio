@@ -11,6 +11,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        nebula: {
+          cyan: "#22d3ee",
+          blue: "#3b82f6",
+          violet: "#8b5cf6",
+          magenta: "#e879f9",
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-body)", "sans-serif"],
       },
     },
   },

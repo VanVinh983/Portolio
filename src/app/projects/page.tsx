@@ -1,174 +1,159 @@
 'use client'
+
+import TiltCard from "@/components/TiltCard";
+
+type Project = {
+    title: string;
+    period: string;
+    role: string;
+    team?: string;
+    intro: string;
+    tech: string;
+    responsibilities: string[];
+};
+
 export default function Projects() {
-    const projects = [
+    const projects: Project[] = [
         {
-            title: "DigiEcard",
-            intro: "A name card management application that allows users to quickly share information via QR Code, easily store contact details, and build a social network for communication through features such as chat, an AI chatbot assistant, and many other functionalities.",
-            tech: "Flutter",
-            role: "Mobile Leader",
+            title: "LIA Beauty Operations & Booking Platform",
+            period: "May 2025 - Now",
+            role: "Fullstack Developer",
+            team: "6",
+            tech: "React Native Expo, Next.js, ReactJS, NestJS, PostgreSQL",
+            intro: "An end-to-end management and booking platform for beauty salons, integrated with AI-driven capabilities.",
             responsibilities: [
-                "Build the source code base following the MVVM architecture, using Provider for state management",
-                "Set up middleware for API calls via HTTP",
-                "Configure development environments (Dev, Staging, Alpha, Production)", 
-                "Establish CI/CD pipeline",
-                "Set up store and submit to CHPlay/Appstore",
-                "Collaborate with Backend team on RESTful APIs",
-                "Integrate Firebase services",
-                "Integrate OCR with Google ML Kit",
-                "Implement QR Code scanning",
-                "Develop chat and AI chat features",
-                "Lead team and review code"
-            ]
+                "Led core development of both Business and Customer mobile apps with React Native Expo",
+                "Built responsive landing pages with real-time AI Face Detection using Next.js",
+                "Developed a comprehensive Web CMS for data configuration",
+                "Developed backend CRUD and operational APIs with NestJS",
+                "Published and maintained production apps on both App Store and Google Play",
+            ],
         },
         {
-            title: "BkGolf",
-            intro: "A golf club management application featuring member management and the ability to quickly verify member information through QR Code scanning.",
-            tech: "Flutter",
-            role: "Mobile Leader", 
-            responsibilities: [
-                "Build source code base similar to DigiEcard",
-                "Develop features based on BA requirements",
-                "Delegate tasks to team members",
-                "Code review and pull request management",
-                "Propose technical solutions",
-                "Handle store submission process"
-            ]
-        },
-        {
-            title: "DigiIman",
-            intro: "An application designed for maintenance staff to manage machinery upkeep. It includes functionalities such as checking maintenance orders, reporting conditions, verifying products and spare parts, quoting prices, creating orders, and verifying product information through QR Code scanning.",
-            tech: "Flutter",
+            title: "Gas Station Management System",
+            period: "Oct 2024 - Jun 2025",
             role: "Mobile Developer",
+            tech: "Flutter, Clean Architecture, BLoC, Firebase (FCM)",
+            intro: "An enterprise gas station management system to streamline fueling operations, fuel monitoring, and financial tracking.",
             responsibilities: [
-                "Build MVVM architecture with Provider",
-                "Set up HTTP middleware",
-                "Configure multiple environments",
-                "Establish CI/CD pipeline",
-                "Handle store submissions",
-                "Integrate RESTful APIs",
-                "Implement QR scanning",
-                "Optimize performance"
-            ]
+                "Built the mobile app with Clean Architecture and the BLoC pattern for scalability",
+                "Integrated RESTful APIs for station/staff management, fuel-tank monitoring, suppliers and debt tracking",
+                "Implemented Firebase Cloud Messaging for real-time push notifications",
+                "Collaborated with backend devs to design secure financial-transaction data flows",
+            ],
         },
         {
-            title: "DigiEcommerce",
-            intro: "An e-commerce application that encompasses all the functionalities of an online marketplace—including browsing product listings, favoriting products, adding items to the shopping cart, placing orders, processing payments, and completing purchases.",
-            tech: "Flutter",
+            title: "Feng Shui Mobile Application",
+            period: "Jul 2024 - May 2025",
             role: "Mobile Developer",
+            team: "6",
+            tech: "React Native, ReactJS, Next.js, NestJS, PostgreSQL",
+            intro: "A mobile app for Feng Shui and horoscope lookup, helping users track destiny insights and optimize orientation elements.",
             responsibilities: [
-                "Maintain Clear Architecture codebase with BloC",
-                "Bug fixing and issue resolution",
-                "SaaS system integration",
-                "Implement social login",
-                "Handle store submissions"
-            ]
+                "Led mobile development with React Native, crafting intuitive cross-platform UI/UX",
+                "Used device compass sensors for accurate Feng Shui direction and alignment tracking",
+                "Built Feng Shui lookup, daily horoscope and fortune-prediction features",
+                "Integrated NestJS + PostgreSQL RESTful APIs for reliable data sync",
+                "Published and maintained production apps on App Store and Google Play",
+            ],
         },
         {
-            title: "Beauty Salon Platform",
-            intro: "A comprehensive customer management and care system for beauty salons, featuring a CMS for customer management and a customer-facing application with advanced functionalities such as AI-based facial flaw detection, chat with doctors, and appointment tracking.",
-            tech: "React Native",
-            role: "Mobile Developer",
+            title: "Beauty Salon Operations & Booking Platform",
+            period: "May 2023 - Jun 2024",
+            role: "Fullstack Developer",
+            team: "8",
+            tech: "React Native, ReactJS, Next.js, Python, NestJS, PostgreSQL · AI: YOLOv8, OpenCV, MediaPipe",
+            intro: "An end-to-end management and booking platform for beauty salons, integrated with AI-driven facial analysis.",
             responsibilities: [
-                "Maintain and develop features using Redux",
-                "Complex business logic implementation",
-                "Interactive chat system development",
-                "Store submission handling",
-                "AI model training for facial detection",
-                "Web platform development for facial recognition",
-                "CMS deployment"
-            ]
+                "Led core development of Business and Customer mobile apps with React Native",
+                "Built responsive landing pages with real-time AI Face Detection using Next.js",
+                "Engaged in the full AI lifecycle: data prep, model training and image-processing APIs",
+                "Developed backend CRUD and operational APIs with NestJS",
+                "Published and maintained production apps on App Store and Google Play",
+            ],
         },
         {
-            title: "Web CMS DigiIman",
-            intro: "A CMS platform for machinery maintenance management that includes functionalities such as managing staff, maintenance orders, devices, spare parts replacements, reporting, and more.",
-            tech: "Umijs",
-            role: "Frontend Leader",
+            title: "BK Golf Member",
+            period: "Dec 2022 - May 2023",
+            role: "Sole Mobile Developer",
+            team: "4",
+            tech: "Flutter, NestJS, PostgreSQL",
+            intro: "A membership and event management platform for a golf club.",
             responsibilities: [
-                "Feature development with Umijs and Redux",
-                "Configure hooks and components",
-                "Code review and branch management",
-                "Handle deployments"
-            ]
+                "Built the entire mobile application single-handedly with Flutter",
+                "Implemented membership management and QR Code check-in",
+                "Developed event creation and seamless member registration modules",
+                "Integrated RESTful APIs with the NestJS + PostgreSQL backend",
+                "Published and maintained production apps on App Store and Google Play",
+            ],
         },
         {
-            title: "Web Omnichannel",
-            intro: "A customer care system integrated with popular communication channels such as Facebook, Zalo, and websites. It features an AI chatbot that automatically responds to pre-trained customer queries, along with an AI-powered content creation system integrated into the platform.",
-            tech: "UmiJS, ReactJS, NestJS, Python",
-            role: "Leader Frontend, Fullstack Developer",
+            title: "RDOS — Tân Hiệp Phát",
+            period: "Dec 2021 - Oct 2022",
+            role: "Frontend Developer",
+            team: "10",
+            tech: "Blazor, Flutter, .NET, PostgreSQL",
+            intro: "A Retail Distributor Operation System for Tan Hiep Phat Group to digitize distribution networks and manage sales operations.",
             responsibilities: [
-                "Feature development with UmiJS and Redux",
-                "JavaScript SDK development",
-                "Code review and branch management",
-                "Server deployment",
-                "WebSocket chat system",
-                "ZNS and email integration",
-                "AI chatbot development",
-                "Public API development"
-            ]
-        }
+                "Developed enterprise modules across Web (Blazor) and Mobile (Flutter): inventory, sales route, attendance and sales order",
+                "Implemented Clean Architecture and BLoC on mobile for scalable, robust state management",
+                "Built an attendance module with GPS geolocation, Google Maps and metadata-embedded photo capture",
+                "Engineered an offline-first sync mechanism to auto-sync logs on reconnect",
+                "Handled complex client-side logic and transactional integration with the .NET backend",
+            ],
+        },
     ];
 
     return (
         <div className="pt-16 pb-16">
-            <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-4xl font-bold mb-8 animate-fade-in">Projects I&apos;ve Worked On</h1>
-                <div className="space-y-12">
+            <div className="max-w-5xl mx-auto px-4">
+                <p className="cosmic-label mb-3">✦ expeditions</p>
+                <h1 className="cosmic-heading text-3xl sm:text-5xl mb-2">
+                    Worlds I&apos;ve <span className="text-gradient">built</span>
+                </h1>
+                <p className="text-gray-400 mb-10">A logbook of explored planets — web, mobile and AI-driven systems.</p>
+                <div className="space-y-8">
                     {projects.map((project, index) => (
-                        <div 
-                            key={index} 
-                            className="bg-white/5 rounded-lg p-6 shadow-lg transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl"
-                            style={{
-                                animation: `fadeInUp 0.5s ease-out ${index * 0.1}s both`
-                            }}
+                        <TiltCard
+                            key={index}
+                            className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg hover:border-blue-400/40 hover:bg-white/[0.07] transition-colors duration-300"
                         >
-                            <h2 className="text-2xl font-semibold mb-3 hover:text-blue-400 transition-colors">{project.title}</h2>
-                            <p className="text-gray-300 mb-4 hover:text-gray-200 transition-colors">{project.intro}</p>
-                            <div className="mb-4 hover:translate-x-2 transition-transform">
-                                <span className="font-medium" style={{ fontWeight: 'bold' }}>Technology:</span> {project.tech}
+                            <div style={{ animation: `fadeInUp 0.5s ease-out ${index * 0.08}s both` }}>
+                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                                <div className="flex items-center gap-3">
+                                    <span className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400/40 to-violet-500/30 border border-white/20 shadow-[0_0_16px_rgba(34,211,238,0.35)]" />
+                                    <h2 className="cosmic-heading text-xl sm:text-2xl text-white">{project.title}</h2>
+                                </div>
+                                <span className="cosmic-label whitespace-nowrap pt-1">★ {project.period}</span>
                             </div>
-                            <div className="mb-4 hover:translate-x-2 transition-transform">
-                                <span className="font-medium" style={{ fontWeight: 'bold' }}>Role:</span> {project.role}
+                            <p className="text-gray-300 mb-4">{project.intro}</p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                <span className="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                                    {project.role}
+                                </span>
+                                {project.team && (
+                                    <span className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">
+                                        Team of {project.team}
+                                    </span>
+                                )}
                             </div>
-                            <div>
-                                <h3 className="font-medium mb-2" style={{ fontWeight: 'bold' }}>Key Responsibilities:</h3>
-                                <ul className="list-disc list-inside space-y-1 text-gray-300">
-                                    {project.responsibilities.map((resp, idx) => (
-                                        <li 
-                                            key={idx} 
-                                            className="hover:translate-x-2 transition-transform hover:text-gray-200"
-                                            style={{
-                                                animation: `fadeInLeft 0.3s ease-out ${idx * 0.05}s both`
-                                            }}
-                                        >
-                                            {resp}
-                                        </li>
-                                    ))}
-                                </ul>
+                            <p className="text-sm text-gray-400 mb-4">
+                                <span className="font-semibold text-gray-200">Tech:</span> {project.tech}
+                            </p>
+                            <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                                {project.responsibilities.map((resp, idx) => (
+                                    <li key={idx} className="hover:text-gray-100 transition-colors">{resp}</li>
+                                ))}
+                            </ul>
                             </div>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
             </div>
             <style jsx>{`
                 @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes fadeInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
             `}</style>
         </div>

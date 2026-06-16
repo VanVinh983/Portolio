@@ -3,19 +3,199 @@
 @tailwind utilities;
 
 :root {
-  --background: #171717;
+  --background: #0a0a0f;
   --foreground: #ededed;
+  /* Updated by MouseFollowLayout without triggering React re-renders */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Subtle scrollbar to match the dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Gradient text helper */
+.text-gradient {
+  background: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Cosmic design system ---- */
+.font-display {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+}
+
+/* HUD coordinate / stardate label */
+.cosmic-label {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.7rem;
+  color: #22d3ee;
+}
+
+/* Glassy HUD panel */
+.cosmic-panel {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  position: relative;
+}
+.cosmic-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.4), transparent 40%, transparent 60%, rgba(232, 121, 249, 0.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cosmic-heading {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
+}
+
+/* Animated cosmic divider */
+.cosmic-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.6), rgba(139, 92, 246, 0.6), transparent);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ---- Custom cursor ---- */
+@media (pointer: fine) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* Spaceship cursor + exhaust trail */
+.ship-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+}
+.cursor-ship {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+.cursor-ship-svg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.6));
+}
+.cursor-ship--lock .cursor-ship-svg {
+  transform: scale(1.3);
+}
+.cursor-flame {
+  position: absolute;
+  top: 7px;
+  left: -26px;
+  width: 34px;
+  height: 14px;
+  border-radius: 9999px;
+  transform-origin: right center;
+  background: linear-gradient(
+    to left,
+    #e0f2fe,
+    #22d3ee 25%,
+    #8b5cf6 55%,
+    rgba(249, 115, 22, 0) 100%
+  );
+  filter: blur(2px);
+  pointer-events: none;
+}
+.ship-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(
+    circle,
+    rgba(224, 242, 254, 0.95),
+    rgba(34, 211, 238, 0.7) 45%,
+    rgba(139, 92, 246, 0) 75%
+  );
+  will-change: transform, opacity;
+}
+@media (pointer: coarse) {
+  .ship-layer,
+  .cursor-ship {
+    display: none;
+  }
+}
+
+/* Skill field: collapse labels to icons when assembled into FE/BE */
+.skill-chip {
+  transition: padding 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.skill-chip-label {
+  display: inline-block;
+  max-width: 160px;
+  overflow: hidden;
+  opacity: 1;
+  transition: max-width 0.25s ease, opacity 0.2s ease, margin 0.25s ease;
+}
+.skill-field.assembled .skill-chip-label {
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+}
+.skill-field.assembled .skill-chip {
+  padding: 0.3rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
