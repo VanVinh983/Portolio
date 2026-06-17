@@ -8,21 +8,6 @@ import { FaGithub, FaLinkedin, FaDownload, FaEnvelope } from 'react-icons/fa';
 const Hero3D = dynamic(() => import('./Hero3D'), { ssr: false });
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // Set initial state based on current window width
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <section className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-8">
       <div className="w-full text-center md:text-left">
@@ -131,17 +116,6 @@ const Hero = () => {
       </div>
 
       <div className="w-full flex justify-center mt-8 md:mt-0 h-[50vh] md:h-[70vh] relative">
-        {isMobile ? (
-          <motion.img
-            src="/avatar.png"
-            alt="Doan Van Vinh"
-            className="absolute object-contain drop-shadow-[4px_4px_10px_rgba(0,0,0,0.7)]"
-            style={{ height: '90%' }}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-          />
-        ) : (
           <motion.div
             className="w-full h-full relative"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -158,7 +132,6 @@ const Hero = () => {
               ✦ drag to orbit the core
             </motion.span>
           </motion.div>
-        )}
       </div>
     </section>
   );

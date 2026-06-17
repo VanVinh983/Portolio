@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { IconType } from 'react-icons';
 import {
   SiFlutter, SiReact, SiDart, SiNextdotjs, SiBlazor, SiNestjs, SiDotnet,
@@ -43,6 +43,9 @@ export default function SkillField() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const chipRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // Touch devices have no hover -> tap toggles assemble/scatter instead.
+  const [isCoarse, setIsCoarse] = useState(false);
+  const [assembled, setAssembled] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -52,7 +55,8 @@ export default function SkillField() {
     if (!ctx) return;
 
     const coarse = window.matchMedia('(pointer: coarse)').matches;
-    let hovered = coarse; // assemble by default on touch (no hover)
+    setIsCoarse(coarse);
+    let hovered = false; // start scattered; desktop assembles on hover, touch on tap
     let W = 0, H = 0;
     let stars: Star[] = [];
     let chips: Chip[] = [];
@@ -182,19 +186,29 @@ export default function SkillField() {
       raf = requestAnimationFrame(loop);
     };
 
-    const onEnter = () => { hovered = true; container.classList.add('assembled'); };
-    const onLeave = () => { if (!coarse) { hovered = false; container.classList.remove('assembled'); } };
+    const setState = (next: boolean) => {
+      hovered = next;
+      container.classList.toggle('assembled', next);
+      setAssembled(next);
+    };
+    const onEnter = () => setState(true);
+    const onLeave = () => setState(false);
+    const onTap = () => setState(!hovered);
     const onResize = () => build();
 
-    if (coarse) container.classList.add('assembled');
     build();
     loop();
-    container.addEventListener('pointerenter', onEnter);
-    container.addEventListener('pointerleave', onLeave);
+    if (coarse) {
+      container.addEventListener('click', onTap);
+    } else {
+      container.addEventListener('pointerenter', onEnter);
+      container.addEventListener('pointerleave', onLeave);
+    }
     window.addEventListener('resize', onResize);
 
     return () => {
       cancelAnimationFrame(raf);
+      container.removeEventListener('click', onTap);
       container.removeEventListener('pointerenter', onEnter);
       container.removeEventListener('pointerleave', onLeave);
       window.removeEventListener('resize', onResize);
@@ -219,7 +233,11 @@ export default function SkillField() {
         </div>
       ))}
       <span className="absolute bottom-3 left-1/2 -translate-x-1/2 cosmic-label pointer-events-none">
-        ✦ hover to assemble · FE / BE
+        {isCoarse
+          ? assembled
+            ? '✦ tap to scatter · FE / BE'
+            : '✦ tap to assemble · FE / BE'
+          : '✦ hover to assemble · FE / BE'}
       </span>
     </div>
   );
