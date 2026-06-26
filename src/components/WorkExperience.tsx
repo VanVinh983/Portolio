@@ -54,7 +54,7 @@ const WorkExperience = () => {
                     className="vertical-timeline-element--work hover:scale-105 transition-transform duration-400"
                     contentStyle={{ background: 'rgba(255,255,255,0.04)', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', borderRadius: '1rem' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgba(255,255,255,0.1)' }}
-                    date="March 2022 - May 2025"
+                    date="Jul 2021 - May 2025"
                     iconStyle={{ background: 'linear-gradient(135deg,#22d3ee,#8b5cf6)', color: 'white', boxShadow: '0 0 0 4px rgba(34,211,238,0.2)' }}
                     icon={<FaRocket />}
                     onTimelineElementClick={() => router.push('/projects')}
@@ -69,7 +69,7 @@ const WorkExperience = () => {
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgba(255,255,255,0.04)', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', borderRadius: '1rem' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgba(255,255,255,0.1)' }}
-                    date="Dec 2021 - March 2022"
+                    date="Apr 2021 - Jul 2021"
                     iconStyle={{ background: 'linear-gradient(135deg,#22d3ee,#8b5cf6)', color: 'white', boxShadow: '0 0 0 4px rgba(34,211,238,0.2)' }}
                     icon={<FaRocket />}
                 >

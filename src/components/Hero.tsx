@@ -70,7 +70,7 @@ const Hero = () => {
           transition={{ delay: 0.6, duration: 0.5 }}
         >
           I architect digital universes — turning ideas into production-ready
-          worlds across Web &amp; Mobile. 4+ years navigating frontend galaxies
+          worlds across Web &amp; Mobile. 5+ years navigating frontend galaxies
           and scalable backend systems.
         </motion.p>
         <motion.div

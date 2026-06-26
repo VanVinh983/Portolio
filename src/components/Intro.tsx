@@ -31,12 +31,13 @@ const Intro = () => {
         <p className="text-gray-300 text-base md:text-lg leading-relaxed">
           I am a product-minded{' '}
           <span className="text-cyan-300 font-medium">Fullstack Developer</span> with
-          over 4 years charting high-performance Web &amp; Mobile systems. I pilot
-          modern frontend galaxies — Next.js, React.js, React Native, Flutter — with
-          a solid foundation in backend constellations (NestJS, Java Spring Boot,
-          Python Flask) and data stores (PostgreSQL, MySQL). My mission: take
+          over 5 years charting high-performance Web &amp; Mobile systems. I pilot
+          modern frontend galaxies — Next.js, React.js, UmiJS, .NET Blazor — and
+          mobile worlds with React Native, Flutter and Android Native, backed by a
+          solid foundation in backend constellations (NestJS, Java Spring Boot,
+          Python Flask) and data stores (PostgreSQL, MySQL, MSSQL). My mission: take
           end-to-end ownership of features, from responsive interfaces to scalable
-          APIs, and launch robust, production-ready worlds.
+          APIs, accelerated with AI tools like Cursor and Claude Code.
         </p>
       </motion.div>
     </div>
